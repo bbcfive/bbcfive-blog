@@ -98,12 +98,12 @@ theme: hexo-theme-huhu # book # landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  - type: git
+  type: git
   repository: https://github.com/bbcfive/bbcfive.github.io.git
   branch: master
-  - type: git
-    repository: https://{travisblog}@giturl
-    branch: master
+  # type: git
+  #   repository: https://{travisblog}@giturl
+  #   branch: master
   # - type: git
   #   repository: https://{TENCENT_USERNAME}:{TENCENT_TOKEN}@giturl
   #   branch: master
