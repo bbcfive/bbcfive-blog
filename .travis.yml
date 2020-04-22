@@ -20,11 +20,18 @@ script:
   - hexo clean
   - hexo generate
 after_script:
-  - git config user.name "bbcfive"
-  - git config user.email "bbcfive@163.com"
-  - sed -i "s/{travisblog}/${travisblog}/g" ./_config.yml
-  # - sed -i "s/{TENCENT_TOKEN}/${TENCENT_TOKEN}/g" ./_config.yml
-  - hexo deploy
+  # - git config user.name "bbcfive"
+  # - git config user.email "bbcfive@163.com"
+  # - sed -i "s/{travisblog}/${travisblog}/g" ./_config.yml
+  # # - sed -i "s/{TENCENT_TOKEN}/${TENCENT_TOKEN}/g" ./_config.yml
+  # - hexo deploy
+  - cd ./public
+  - git init
+  - git config user.name "bbcfive" 
+  - git config user.email "bbcfive@163.com" 
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${travisblog}@${GH_REF}" master:master
 # 通知
 notifications:
   email:
