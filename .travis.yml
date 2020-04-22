@@ -40,4 +40,4 @@ notifications:
 
 env:
  global:
-   - GH_REF: github.com/bbcfive/bbcfive.github.io.git
+   - GH_REF: github.com/bbcfive/bbcfive-blog.git
