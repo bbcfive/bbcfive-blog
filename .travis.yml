@@ -20,7 +20,7 @@ script:
   - hexo clean
   - hexo generate
 after_script:
-  - git config user.name "bbcfive"
+  - git config user.name "travisblog"
   - git config user.email "bbcfive@163.com"
   - sed -i "s/{GITHUB_TOKEN}/${GITHUB_TOKEN}/g" ./_config.yml
   - sed -i "s/{TENCENT_TOKEN}/${TENCENT_TOKEN}/g" ./_config.yml
