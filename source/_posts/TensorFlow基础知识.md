@@ -1,9 +1,9 @@
 ---
-title: tensorflow基础知识
+title: TensorFlow基础知识
 date: 2018-06-22 09:55:12
 tags: 
   - python
-  - tensorflow
+  - TensorFlow
 categories: 机器学习  
 ---
 
@@ -41,7 +41,12 @@ one = tf.constant(1)
 new_value = tf.add(state, one)
 update = tf.assign(state, new_value)
 
-init = tf.global_variables_initializer()
+# tf.initialize_all_variables() no long valid from
+# 2017-03-02 if using tensorflow >= 0.12
+if int((tf.__version__).split('.')[1]) < 12 and int((tf.__version__).split('.')[0]) < 1:
+  init = tf.initialize_all_variables()
+else:
+  init = tf.global_variables_initializer()
 
 with tf.Session() as sess:
   sess.run(init)
