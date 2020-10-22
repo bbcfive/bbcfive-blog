@@ -31,8 +31,6 @@ after_script:
   - git add .
   - git commit -m "Update docs"
   - git push --force --quiet "https://${travisblog}@${GH_REF}" 
-  - npm run build
-  - npm run clean
   - npm run deploy
 # 通知
 notifications:
