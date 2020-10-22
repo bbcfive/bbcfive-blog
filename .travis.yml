@@ -41,4 +41,3 @@ notifications:
 env:
  global:
    - GH_REF: github.com/bbcfive/bbcfive-blog.git
-   - GH_TOKEN: mIZJ2bH5waB7dUY-qbRitw
