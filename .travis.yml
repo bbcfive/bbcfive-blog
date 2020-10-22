@@ -17,7 +17,9 @@ branches:
 install:
   - npm install
 script:
-  - hexo generate
+  - npm run build
+  - npm run clean
+  - npm run deploy
 after_script:
   # - git config user.name "bbcfive"
   # - git config user.email "bbcfive@163.com"
@@ -31,6 +33,7 @@ after_script:
   - git add .
   - git commit -m "Update docs"
   - git push --force --quiet "https://${travisblog}@${GH_REF}" 
+
 # 通知
 notifications:
   email:
