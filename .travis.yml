@@ -15,9 +15,10 @@ branches:
 # before_install:
 #   - git clone https://github.com/shixiaohu2206/hexo-theme-huhu.git themes/huhu
 install:
+  - npm install hexo-cli -g
   - npm install
 script:
-  - hexo generate
+  - hexo g
 after_script:
   # - git config user.name "bbcfive"
   # - git config user.email "bbcfive@163.com"
@@ -30,7 +31,7 @@ after_script:
   - git config user.email "bbcfive@163.com" 
   - git add .
   - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" 
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 # 通知
 notifications:
   email:
