@@ -9,9 +9,6 @@ install:
   - yarn install
 
 script: 
-  - git config user.name "bbcfive"
-  - git config user.email "bbcfive@163.com"
-  - git config user.password $password
   - yarn run build
   - yarn run deploy
 
