@@ -10,6 +10,7 @@ install:
 
 script: 
   - yarn run build
+  - yarn run clean
   - yarn run deploy
 
 deploy:
