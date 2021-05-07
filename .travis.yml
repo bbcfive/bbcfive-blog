@@ -1,46 +1,20 @@
-# 语言
 language: node_js
-# node版本
+
 node_js:
   - 8
-# 指定缓存模块
-cache:
-  directories:
-    - node_modules
-# 监听分支
-branches:
-  only:
-    - master
-# 下载主题
-# before_install:
-#   - git clone https://github.com/shixiaohu2206/hexo-theme-huhu.git themes/huhu
-install:
-  - npm install hexo-cli -g
-  - npm install
-script:
-  - hexo generate
-after_script:
-  - git config user.name "bbcfive"
-  - git config user.email "bbcfive@163.com"
-  - sed -i "s/{travisblog}/${travisblog}/g" ./_config.yml
-  - hexo deploy
-  - cd ./public
-  - git init
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-  - git config user.name "bbcfive" 
-  - git config user.email "bbcfive@163.com" 
-  - sed -i "s/gh_token/${travisblog}/g" ./_config.yml
-  - hexo deploy
 
-# 通知
-notifications:
-  email:
-    - bbcfive@163.com
-  on_success: change
-  on_failure: always
+cache: yarn
 
-env:
- global:
-   - GH_REF: github.com/bbcfive/bbcfive-blog.git
+install: 
+  - yarn install
+
+script: 
+  - yarn run build
+  - yarn run deploy
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  on: 
+    branch: master
