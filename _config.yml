@@ -98,6 +98,6 @@ theme: hexo-theme-huhu # book # landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ssh
+  type: git
   repository: git@github.com:bbcfive/bbcfive.github.io.git
   branch: master

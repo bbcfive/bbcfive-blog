@@ -1,6 +1,6 @@
 ---
 title: 使用Next.id做Web3Auth
-date: 2022-06-14 23:30:12
+date: 2022-06-15 23:30:12
 tags: 
   - Web3
   - 区块链
@@ -22,9 +22,9 @@ proof-service主要有两种应用：
 
 ## 与Twitter建立链接
 流程如下：
-![avatar](../images/NextIdLinkCreationFlow.jpg)
+![avatar](../../../../images/NextIdLinkCreationFlow.jpg)
 ### 1. Dapp发送post请求给ProofService
-![avatar](../images/NextIdPost1.jpg)
+![avatar](../../../../images/NextIdPost1.jpg)
 注意📢：
  - identity是Twitter的账号id
  - public_key是以太坊账号地址的私钥(可以通过metask钱包导出)所产生的公钥(可以通过[ethereum-private-key-to-public-key](https://lab.miguelmota.com/ethereum-private-key-to-public-key/example/)点击获取)
@@ -51,20 +51,20 @@ try {
 }
 ```
   运行界面：
-  ![avatar](../images/NextIdSignReq.jpg)
+  ![avatar](../../../../images/NextIdSignReq.jpg)
   注意📢：
    - 如果你的signature是64位的，需要使用node自带的Buffer.from(str, "hex").toString("base64")转成Base64格式的string
    - 注意传入Buffer.from的第一个参数str如果是16进制的，不需要带0x，即把"0xabc..."替换为"abc..."即可
-  ![avatar](../images/BufferToBase64.jpg)
+  ![avatar](../../../../images/BufferToBase64.jpg)
  
 
 ### 3. 去社交平台上发布带有signature(Base64格式)的post_content
-![avatar](../images/TwitterSig.jpg)
+![avatar](../../../../images/TwitterSig.jpg)
 注意📢：
 Sig:和签名直接需要加一个空格，否则签名将不被识别。
 
 ### 4. Dapp再次发送post请求给ProofService
-![avatar](../images/NextIdPost2.jpg)
+![avatar](../../../../images/NextIdPost2.jpg)
 可以看到Status：201，即为创建成功
 注意📢：
  - proof_location即为Twitter的推文ID，例如：
@@ -73,7 +73,7 @@ Sig:和签名直接需要加一个空格，否则签名将不被识别。
  - uuid和created_at都为上一个post请求返回值里的数据
 
 ### 5.使用get /v1/proof查询创建记录
-![avatar](../images/NextIdGet1.jpg)
+![avatar](../../../../images/NextIdGet1.jpg)
 此时已经可以通过接口查询到link的创建记录，说明与Twitter的链接成功。
 
   
