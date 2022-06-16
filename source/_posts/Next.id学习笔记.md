@@ -64,7 +64,7 @@ try {
 Sig:和签名直接需要加一个空格，否则签名将不被识别。
 
 ### 4. Dapp再次发送post请求给ProofService
-![avatar](../../../../images/NextIdPost2.jpg)
+![avatar](../../../../images/NextIDPost2.jpg)
 可以看到Status：201，即为创建成功
 注意📢：
  - proof_location即为Twitter的推文ID，例如：
