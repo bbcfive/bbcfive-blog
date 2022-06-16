@@ -76,7 +76,6 @@ Sig:和签名直接需要加一个空格，否则签名将不被识别。
 ![avatar](../../../../images/NextIdGet1.jpg)
 此时已经可以通过接口查询到link的创建记录，说明与Twitter的链接成功。
 
-  
 
 
 
