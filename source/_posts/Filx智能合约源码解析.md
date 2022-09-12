@@ -5,7 +5,7 @@ tags:
   - 智能合约
   - 以太坊
   - 数字货币
-  - solidity
+  - Solidity
 categories: 区块链
 ---
 
